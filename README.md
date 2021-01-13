@@ -1,11 +1,14 @@
 # Spark Supervised Learning for Customer Churn
 ## Project Motivation
 The data I will be analyzing is from a fictious company called Sparkify. It works similarily to Spotify. It is a subscription based music service with two tiers of users, free and premium plan. Users can upgrade from free or downgrade from premium at any time and may aslo cancel their service all together.<br>
+
 [Customer Churn](https://www.investopedia.com/terms/c/churnrate.asp) is a metric which measures the rate at which customers stop doing business with an entity. In our case when customers move from Sparkify's paid service level to free.<br>
+
 Predicting churn rates is a challenging and common problem that data scientists and analysts regularly encounter in any customer-facing business. Additionally, the ability to efficiently manipulate large datasets with Spark is one of the highest-demand skills in the field of data.<br>
 
 ## Project Description
-To make a scalable solution the project is broken down into three stages:
+To make a scalable solution the project is broken down into three stages:<br>
+
 >1. Exploratory Data Analysis
 >2. Feature Engineering and Scaling
 >3. Modelling
