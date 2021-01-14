@@ -20,14 +20,18 @@ The dataset for this project originates from IBM Watson. The data I investigate 
 
 >* **Sparkify.ipynb**: detailed analysis report <br>
 >* **mini_event_data.json**: subset of data for use in Sparkify.ipynb for creating scalable solution for Spark cluster on AWS<br>
+
 App Folder<br>
+
 >* **run.py**: creates flask app to display webpage<br>
 >* **sparkify_data.csv**: original json data converted to csv for display in web app<br>
 >* **cleaned_data.csv**: cleaned json data converted to csv for display in web app<br>
 >* **feat_eng_data.csv**: feature engineered variables stored in csv for display in web app<br>
 >* **plot_1_data.csv**: page interaction data for free and paid subscriptions for display in web app<br>
 >* **plot_2_data.csv**: page interaction data for cancelled/churned and active users<br>
+
 App-> templates folder<br>
+
 >* **master.html**: main page of web app <br>
 >* **featureengineering.html** feature engineering page of web app<br>
 >* **analysis.html** analysis page of web app<br>
