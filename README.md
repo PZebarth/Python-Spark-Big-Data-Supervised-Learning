@@ -54,8 +54,8 @@ App-> templates folder<br>
 I was able to make several conclusion based on my analysis: <br>
 
 * Page interactions constitued most of my engineered variables and had the greatest covariance with customer churn
-* The algorithm had an f1 score and accuracy of 100% based on the number of engineered features for the testing data
-* This algorithm can scale to a distributed spark clustere run on a 12GB dataset through AWS
+* The algorithm had an f1 score and accuracy of 86-88% based on the number of engineered features for the testing data
+* This algorithm can scale to a distributed spark cluster to run a 12GB dataset through AWS which is the ultimate goal of this project
 
 In conlcusion I made a model which would improve how Sparkify identifies users who will churn and can incentivize them to stay before they leave.
 
