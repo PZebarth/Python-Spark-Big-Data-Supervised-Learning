@@ -37,6 +37,18 @@ App-> templates folder<br>
 >* **analysis.html** analysis page of web app<br>
 >* **results.html** results page of web app<br>
 
+## Library Dependencies
+
+* Pandas
+* Numpy 
+* Re
+* PySpark
+* Datetime
+* Time
+* Plotly
+* Flask
+* Json
+
 ## Results
 
 I was able to make several conclusion based on my analysis: <br>
