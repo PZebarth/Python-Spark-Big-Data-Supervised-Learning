@@ -22,9 +22,9 @@ def index():
 
     """
     # create table for original dataset
-    table_1 = data_table(filepath = "sparkify_data.csv", title='Raw Sparkify Data')
+    table_1 = data_table_low(filepath = "sparkify_data.csv", title='Raw Sparkify Data')
 
-    table_2 = data_table(filepath = "cleaned_data.csv", title='Cleaned Sparkify Data')
+    table_2 = data_table_low(filepath = "cleaned_data.csv", title='Cleaned Sparkify Data')
 
     # create and append plotly visuals into an array to be passed later for graphJSON file
     graphs = [table_1, table_2]
@@ -94,6 +94,38 @@ def data_table(
             Table (fig): a table view using plotly
     """
     df = read_data_csv(filepath)
+    fig = go.Figure(
+        data=[
+            go.Table(
+                header=dict(
+                    values=list(df.columns), align="left"
+                ),
+                cells=dict(
+                    values=[df[col] for col in df.columns],
+                    align="left",
+                ),
+            )
+        ]
+    )
+
+    fig.update_layout(title=go.layout.Title(text=title, x=0.5))
+
+    return fig
+
+def data_table_low(
+               filepath="sparkify_data.csv",
+               title="Engineered Features Dataframe",
+               ):
+    """Displaying table in Plotly for adjusted csv files.
+
+        Args:
+            filepath (string): path to read the data
+            title (string): table title
+
+        Returns:
+            Table (fig): a table view using plotly
+    """
+    df = read_data_csv_low(filepath)
     fig = go.Figure(
         data=[
             go.Table(
@@ -188,19 +220,6 @@ def plot_2():
 
     return fig
 
-def read_data_csv_plot(path):
-    """Read the csv data from the specified path.
-
-        Args:
-            path (string): path to the csv file
-        Returns:
-            DataFrame (df): DataFrame Object
-
-    """
-    df = pd.read_csv(path)
-    df.drop(["Unnamed: 0","free"], axis=1, inplace=True)
-    return df
-
 def read_data_csv(path):
     """Read the csv data from the specified path.
 
@@ -214,8 +233,21 @@ def read_data_csv(path):
     df.drop(["Unnamed: 0"], axis=1, inplace=True)
     return df
 
+def read_data_csv_low(path):
+    """Read the csv data from the specified path.
+
+        Args:
+            path (string): path to the csv file
+        Returns:
+            DataFrame (df): DataFrame Object
+
+    """
+    df = pd.read_csv(path, low_memory=False)
+    df.drop(["Unnamed: 0"], axis=1, inplace=True)
+    return df
+
 def main():
-    app.run(host="0.0.0.0", port=3001, debug=True)
+    app.run(host="127.0.0.1", port=3001, debug=True)
 
 
 if __name__ == "__main__":
