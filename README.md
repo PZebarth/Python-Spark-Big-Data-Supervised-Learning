@@ -13,7 +13,7 @@ To make a scalable solution the project is broken down into three stages:<br>
 >2. Feature Engineering and Scaling
 >3. Modelling
 
-I made use of sparks declarative and imperative programming in steps 1 and 2. I explored all variables and found 4 neccessary to engineer the remaining necessary. I scaled them to appropriate dimensions. Then I modelled the data using several machine learning algorithms from which I chose one with the best metrics and performance so my solution could scale.
+I made use of sparks declarative and imperative programming in steps 1 and 2. I explored all variables and found 4 neccessary to engineer the remaining variables. I scaled them to appropriate dimensions. Then I modelled the data using several machine learning algorithms from which I chose one with the best metrics and performance so my solution could scale.
 
 ## File Description
 The files seen here encompass all my work for this project. There is a seperate folder for the web app called "app" which displays visuals and data from Sparkify.ipynb notebook. The notebook contains all the analysis and findings for this project. The file descriptions follow:
@@ -36,6 +36,14 @@ App-> templates folder<br>
 >* **featureengineering.html** feature engineering page of web app<br>
 >* **analysis.html** analysis page of web app<br>
 >* **results.html** results page of web app<br>
+
+## Running Web App
+Make sure the files are downloaded and saved in a folders following the described file description in this README.md file above. 
+
+1. * From the commanda line enter: python run.py
+2. * From your browser visit: http:\\0.0.0.0.3001\
+
+The web app will load with various visulazations, explore the web app tabs for more data and visualizations.
 
 ## Library Dependencies
 
