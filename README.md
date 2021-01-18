@@ -40,8 +40,8 @@ App-> templates folder<br>
 ## Running Web App
 Make sure the files are downloaded and saved in a folders following the described file description in this README.md file above. 
 
-1. * From the commanda line enter: python run.py
-2. * From your browser visit: http:\\0.0.0.0.3001\
+1. From the command line enter: **python run.py**
+2. From your browser visit: **http://0.0.0.0.3001/**
 
 The web app will load with various visulazations, explore the web app tabs for more data and visualizations.
 
