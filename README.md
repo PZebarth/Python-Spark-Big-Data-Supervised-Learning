@@ -41,7 +41,7 @@ App-> templates folder<br>
 Make sure the files are downloaded and saved in a folders following the described file description in this README.md file above. 
 
 1. From the command line enter: **python run.py**
-2. From your browser visit: **http://0.0.0.0.3001/**
+2. From your browser visit: **http://127.0.0.1:3001/**
 
 The web app will load with various visulazations, explore the web app tabs for more data and visualizations.
 
@@ -49,7 +49,6 @@ The web app will load with various visulazations, explore the web app tabs for m
 
 * Pandas
 * Numpy 
-* Re
 * PySpark
 * Datetime
 * Time
