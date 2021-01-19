@@ -161,14 +161,14 @@ def plot_1():
     fig = go.Figure(
         [
             go.Bar(
-                x=plot_1[plot_1['paid'] ==1].variable,
-                y=plot_1[plot_1['paid'] ==1].value,
-                text=plot_1[plot_1['paid'] ==1].variable,
+                x=plot_1[plot_1['Paid'] ==1].variable,
+                y=plot_1[plot_1['Paid'] ==1].value,
+                text=plot_1[plot_1['Paid'] ==1].variable,
             ),
             go.Bar(
-                x=plot_1[plot_1['paid'] ==1].variable,
-                y=plot_1[plot_1['paid'] ==0].value,
-                text=plot_1[plot_1['paid'] ==1].variable,
+                x=plot_1[plot_1['Paid'] ==1].variable,
+                y=plot_1[plot_1['Paid'] ==0].value,
+                text=plot_1[plot_1['Paid'] ==1].variable,
             )
 
         ]
@@ -199,14 +199,14 @@ def plot_2():
     fig = go.Figure(
         [
             go.Bar(
-                x=plot_2[plot_2['cancelled'] ==1].variable,
-                y=plot_2[plot_2['cancelled'] ==1].value,
-                text=plot_2[plot_2['cancelled'] ==1].variable,
+                x=plot_2[plot_2['Churn'] ==1].variable,
+                y=plot_2[plot_2['Churn'] ==1].value,
+                text=plot_2[plot_2['Churn'] ==1].variable,
             ),
             go.Bar(
-                x=plot_2[plot_2['cancelled'] ==1].variable,
-                y=plot_2[plot_2['cancelled'] ==0].value,
-                text=plot_2[plot_2['cancelled'] ==1].variable,
+                x=plot_2[plot_2['Churn'] ==1].variable,
+                y=plot_2[plot_2['Churn'] ==0].value,
+                text=plot_2[plot_2['Churn'] ==1].variable,
             )
 
         ]
