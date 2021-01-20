@@ -75,9 +75,18 @@ The web app will load with various visulazations, explore the web app tabs for m
 
 I was able to make several conclusion based on my analysis: <br>
 
-* Page interactions constitued most of my engineered variables and had the greatest covariance with customer churn
-* The algorithm had an f1 score and accuracy of 72-75% based on the number of engineered features for the testing data
-* This algorithm can scale to a distributed spark cluster to run a 12GB dataset through AWS which is the ultimate goal of this project
+* Page interactions constitued most of my engineered variables and had the greatest covariance with customer churn<br>
+* The algorithm had an f1 score and accuracy of 72-75% based on the number of engineered features for the testing data<br>
+* This algorithm can scale to a distributed spark cluster to run a 12GB dataset through AWS which is the ultimate goal of this project<br>
 
-In conlcusion I made a model which would improve how Sparkify identifies users who will churn and can incentivize them to stay before they leave.
+In conlcusion I made a model which would improve how Sparkify identifies users who will churn and can incentivize them to stay before they leave.<br>
 
+## Conclusion 
+
+The goal of this project is to take a dataset, perform feature engineering, scale the features and perform some modelling so that we can make accurate predictions on whether a customer will churn or not.<br>
+
+This was accomplished through imperative feature engineering of the userId, page, level, and churn columns. Minmax feature scaling was applied to all engineered features. During modelling a random forest classifier was used. I was able to make a model with an f1 of 67-72%% on testing and validation datasets.<br>
+
+Feature engineering had its difficulties. Choosing which features of the original data we wanted to keep and transform to the variables we would use for modelling took alot of trial and error. What you see in the feature engineering section is my final polished work. I challeneged myself to refrain from using SQL or declaritive programming, which I'm more comfortable with, and used imperative programming to make it more concise and clean. <br>
+
+I could further improve the exploratory data analysis section which could be made more concise by the use of imperative programming instead of declarative. Furthermore, I wish I choose more parameters to hyper tune to create a model with a better F1 score. Afterall, the more accurate the model the more users we can retain.<br>
