@@ -1,4 +1,5 @@
 # Spark Supervised Learning for Customer Churn
+# Project Definition
 ## Project Overview
 The data I will be analyzing is from a fictious company called Sparkify. It works similarily to Spotify. It is a subscription based music service with two tiers of users, free and premium plan. Users can upgrade from free or downgrade from premium at any time and may aslo cancel their service all together.<br>
 
@@ -9,7 +10,7 @@ Predicting churn rates is a challenging and common problem that data scientists 
 ## Problem Statement
 The sparkify data has 18 columns and 286500 rows in the 128MB small dataset. The small dataset is being used to conduct analysis before moving to a 12GB dataset hosted on AWS S3. Using AWS EMR we can use a distributed spark cluster to analyze customer churn. However, first analysis must be conducted on the smaller dataset so we can decide how we are going to label and identify customer churn.<br>
 
-Identifying customer churn is a complex problem. With 18 features in the dataset we need to eliminate ones that won't help identify customer churn through statistical exploratory data analysis. The dataset includes all daily activity, everytime a user action changes between songs or pages their data is recorded. We need to change the granularity of the data for it to effectively use machine learning to identify customer churn. By aggregating features to daily values we have the opportunity of identifying customer churn daily. For this reason aggregating on daily values is better than weekly or monthly.<br>
+Identifying customer churn is a complex problem. With 18 features in the dataset we need to eliminate ones that won't help identify customer churn through statistical exploratory data analysis. The dataset includes all daily activity, everytime a user action changes between songs or pages their data is recorded. We need to change the granularity of the data to effectively use machine learning to identify customer churn. By aggregating features to daily values we have the opportunity of identifying customer churn daily. For this reason aggregating on daily values is better than weekly or monthly.<br>
 
 For modelling customer churn we need an appropriate binary classifying machine learning algorithm. This leaves us with the following which I will test: random forest classifier, gradient boosted tree classifier, linear support vector classifier, logistic regression, and a decision tree classifier. The data must be split into testing and validation sets so we can evaluate the effectiveness of our model to identify customer churn.<br>
 
@@ -21,16 +22,40 @@ We need to use a metric that accounts for correct and incorrect classification b
 
 $F1 = \frac{2*Precision*Recall}{Precision+Recall}$<br>
 
-## Project Description
+# Methodology
 To make a scalable solution the project is broken down into three stages:<br>
 
 >1. Exploratory Data Analysis
 >2. Feature Engineering and Scaling
 >3. Modelling
 
-I made use of sparks declarative and imperative programming in steps 1 and 2. I explored all variables and found 4 neccessary to engineer the remaining variables. I scaled them to appropriate dimensions. Then I modelled the data using several machine learning algorithms from which I chose one with the best metrics and performance so my solution could scale.
+## Data Preprocessing
+I made use of sparks declarative and imperative programming in steps 1 and 2. I explored all variables and found 4 neccessary to engineer the remaining variables. <br>
 
-## File Description
+## Implementation
+2. Identifying customer churn is a complex problem. With 18 features in the dataset we need to eliminate ones that won't help identify customer churn through statistical exploratory data analysis. The dataset includes all daily activity, everytime a user action changes between songs or pages their data is recorded. We need to change the granularity of the data to effectively use machine learning to identify customer churn. By aggregating features to daily values we have the opportunity of identifying customer churn daily. For this reason aggregating on daily values is better than weekly or monthly. I scaled them to appropriate dimensions using a min max scaler before procedding to the modelling step.<br>
+
+## Refinement
+3. The data must be split into testing and validation sets so we can evaluate the effectiveness of our model to identify customer churn. For modelling customer churn we need an appropriate binary classifying machine learning algorithm aswell. This leaves us with the following which I will test: <br>
+
+* random forest classifier <br>
+* gradient boosted tree classifier <br>
+* linear support vector classifier <br>
+* logistic regression <br>
+* decision tree classifier <br>
+
+The random forest classifier had the best F1 score and training time on the test data. I hyper tuned the parameters of the random forest classifier to achieve the best model and tested it on the validation set achievig a F1 score of 67-72%.<br>
+
+# Results
+
+## Model Evaluation and Validation
+I hyper tuned the parameters of the random forest classifier which were the best of the 5 binary classfiers I tested against the testing data for F1 score and training time. I used a random forest classifier with 10 trees and a max depth of 3 as the grid search cross validation revelaed when optimized for F1 score. I tested this model against the validation data and acieved an F1 score of 72% confiriming we have improved and tested the preffered model.<br>
+
+## Justification
+Due to the unbalanced nature of the dataset with 225 active users and 52 who churned the ensemble of weak learners performed best. The random forest classifier is an ensemble of decision trees, 10 with my model, that average their results and make a prediction. This prevented overfitting due to the unbalanced dataset. The other models are not ensembles and try to fit the data with only one model. <br>
+
+
+# File Description
 The files seen here encompass all my work for this project. There is a seperate folder for the web app called "app" which displays visuals and data from Sparkify.ipynb notebook. The notebook contains all the analysis and findings for this project. The file descriptions follow:
 
 >* **Sparkify.ipynb**: detailed analysis report <br>
@@ -52,7 +77,7 @@ App-> templates folder<br>
 >* **analysis.html** analysis page of web app<br>
 >* **results.html** results page of web app<br>
 
-## Running Web App
+# Running Web App
 Make sure the files are downloaded and saved in a folders following the described file description in this README.md file above. 
 
 1. From the command line in the app folder directory enter: **python run.py**
@@ -60,7 +85,7 @@ Make sure the files are downloaded and saved in a folders following the describe
 
 The web app will load with various visualizations, explore the web app tabs for more data and visualizations.
 
-## Library Dependencies
+# Library Dependencies
 
 * Pandas
 * Numpy 
@@ -71,7 +96,7 @@ The web app will load with various visualizations, explore the web app tabs for 
 * Flask
 * Json
 
-## Results
+# Final Results
 
 I was able to make several conclusion based on my analysis: <br>
 
@@ -81,7 +106,7 @@ I was able to make several conclusion based on my analysis: <br>
 
 In conlcusion I made a model which would improve how Sparkify identifies users who will churn and can incentivize them to stay before they leave.<br>
 
-## Conclusion 
+# Conclusion 
 
 The goal of this project is to take a dataset, perform feature engineering, scale the features and perform some modelling so that we can make accurate predictions on whether a customer will churn or not.<br>
 
