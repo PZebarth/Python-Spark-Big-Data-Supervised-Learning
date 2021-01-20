@@ -20,7 +20,7 @@ The dataset is unbalanced with 225 active users and only 52 who churn. When spli
 
 We need to use a metric that accounts for correct and incorrect classification better than accuracy. F1 Score does precisely this. We need to evaluate and optimize our chosen model using F1 score to avoid overfitting. This will provide reliable results on the performance of our model. The formula for F1 score is:<br>
 
-$F1=\frac{2*Precision*Recall}{Precision+Recall}$ <br>
+F1 = 2 * (Precision * Recall)/(Precision + Recall)<br>
 
 # Methodology
 To make a scalable solution the project is broken down into three stages:<br>
