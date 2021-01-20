@@ -20,7 +20,7 @@ The dataset is unbalanced with 225 active users and only 52 who churn. When spli
 
 We need to use a metric that accounts for correct and incorrect classification better than accuracy. F1 Score does precisely this. We need to evaluate and optimize our chosen model using F1 score to avoid overfitting. This will provide reliable results on the performance of our model. The formula for F1 score is:<br>
 
-$F1 = \frac{2*Precision*Recall}{Precision+Recall}$<br>
+$F1 = \frac{2*Precision*Recall}{Precision+Recall}$ <br>
 
 # Methodology
 To make a scalable solution the project is broken down into three stages:<br>
@@ -33,10 +33,10 @@ To make a scalable solution the project is broken down into three stages:<br>
 I made use of sparks declarative and imperative programming in steps 1 and 2. I explored all variables and found 4 necessary to engineer the remaining variables. <br>
 
 ## Implementation
-2. Identifying customer churn is a complex problem. With 18 features in the dataset we need to eliminate ones that won't help identify customer churn through statistical exploratory data analysis. The dataset includes all daily activity, every time a user action changes between songs or pages their data is recorded. We need to change the granularity of the data to effectively use machine learning to identify customer churn. By aggregating features to daily values we have the opportunity of identifying customer churn daily. For this reason aggregating on daily values is better than weekly or monthly. I scaled them to appropriate dimensions using a min max scaler before proceeding to the modelling step. <br>
+Identifying customer churn is a complex problem. With 18 features in the dataset we need to eliminate ones that won't help identify customer churn through statistical exploratory data analysis. The dataset includes all daily activity, every time a user action changes between songs or pages their data is recorded. We need to change the granularity of the data to effectively use machine learning to identify customer churn. By aggregating features to daily values we have the opportunity of identifying customer churn daily. For this reason aggregating on daily values is better than weekly or monthly. I scaled them to appropriate dimensions using a min max scaler before proceeding to the modelling step. <br>
 
 ## Refinement
-3. The data must be split into testing and validation sets so we can evaluate the effectiveness of our model to identify customer churn. For modelling customer churn we need an appropriate binary classifying machine learning algorithm as well. This leaves us with the following which I will test: 
+The data must be split into testing and validation sets so we can evaluate the effectiveness of our model to identify customer churn. For modelling customer churn we need an appropriate binary classifying machine learning algorithm as well. This leaves us with the following which I will test: 
 
 * random forest classifier <br>
 * gradient boosted tree classifier <br>
